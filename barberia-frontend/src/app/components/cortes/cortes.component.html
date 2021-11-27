@@ -1,0 +1,14 @@
+<div class="contenedor">
+    <div class="alert alert-success" role="alert" *ngIf="alertMessage">
+        {{alertMessage}}
+    </div>
+    <h1>Lista de Cortes</h1>
+    <app-tabla-cortes (alertData)="mostrarAlerta($event)"></app-tabla-cortes>
+    <button
+    type="button"
+    class="btn btn-primary"
+    routerLink="/formulario-corte"
+    >
+    <i class="far fa-plus-square"></i>
+    </button>
+</div>

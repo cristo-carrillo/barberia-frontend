@@ -1,0 +1,24 @@
+<!-- <p>{{subtitulo}}</p> -->
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Descripcion</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Estado</th>
+        <th scope="col">Acción</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let corte of cortes; let i = index">
+        <th scope="row">{{i + 1}}</th>
+        <td>{{corte.nombre}}</td>
+        <td>{{corte.descripcion}}</td>
+        <td>{{corte.precio}}</td>
+        <td>{{corte.estado}}</td>
+        <td><button type="button" class="btn btn-danger es" (click)="eliminarCorte(corte.id_corte)"><i class="fas fa-trash-alt"></i></button>
+        <button type="button" class="btn btn-warning" (click)="irActualizarCorte(corte)"><i class="far fa-edit"></i></button></td>
+    </tr>
+  </tbody>
+</table>

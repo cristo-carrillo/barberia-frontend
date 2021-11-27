@@ -1,0 +1,45 @@
+
+<div class="contenedor">
+    <h1>{{ corteActualizar ? 'Actualizar corte' : 'Agregar corte'}}</h1>
+    <form [formGroup] = "formGroup">
+        <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Nombre</label>
+        <input
+            type="text"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+            formControlName="nombre"
+        />
+        </div>
+        <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Descripcion</label>
+        <input
+            type="text"
+            class="form-control"
+            id="exampleInputPassword1"
+            formControlName="descripcion"
+            />
+        </div>
+        <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">precio</label>
+        <input
+            type="number"
+            class="form-control"
+            id="exampleInputPassword11"
+            formControlName="precio"
+        />
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Estado</label>
+            <input
+                type="text"
+                class="form-control"
+                id="exampleInputPassword111"
+                formControlName="estado"
+                />
+        </div>
+      <button type="submit" class="btn btn-primary" [disabled]="formGroup.invalid" (click)="agregarCorte()" *ngIf="!corteActualizar">Agregar</button>
+      <button type="submit" class="btn btn-primary" [disabled]="formGroup.invalid" (click)="actualizarCorte()" *ngIf="corteActualizar">Actualizar</button>
+    </form>
+    </div>
